@@ -22,7 +22,7 @@ jobs:
       new_release: ${{ steps.refs.outputs.new_release }}
     steps:
       - name: Source checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           submodules: recursive        
       - name: Update SDKs if required
@@ -113,7 +113,7 @@ jobs:
         platform: [OpenBK7231T, OpenBK7231N, OpenXR809, OpenBL602, OpenW800, OpenW600, OpenLN882H, OpenTR6260]
     steps:
       - name: Source checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           submodules: recursive        
       - uses: actions/setup-python@v2
@@ -164,7 +164,7 @@ jobs:
         platform: [OpenESP32, OpenESP32C3, OpenESP32C2, OpenESP32C6, OpenESP32S3, OpenESP32S2]
     steps:
       - name: Source checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           submodules: recursive        
       - uses: actions/setup-python@v2
@@ -203,7 +203,7 @@ jobs:
     if: always() && needs.refs.outputs.new_release == 'true' && (github.ref == 'refs/heads/main' || github.ref_name == 'alpha')
     steps:
       - name: Source checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
       - name: Fetch build assets
         uses: actions/download-artifact@v4
         with:
