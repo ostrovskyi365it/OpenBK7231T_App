@@ -195,6 +195,7 @@ jobs:
             output/${{ needs.refs.outputs.version }}/${{ matrix.platform }}_${{ needs.refs.outputs.version }}.img
             output/${{ needs.refs.outputs.version }}/${{ matrix.platform }}_${{ needs.refs.outputs.version }}.factory.bin
           if-no-files-found: warn
+          cancel-in-progress: true
 
   release:
     name: Semantic Release Images and Artifacts
